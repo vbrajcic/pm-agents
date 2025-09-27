@@ -1,0 +1,98 @@
+# Team Lunch Planner & Expense Tracker - User Testing Transcript
+
+**Participant:** Sarah Chen, Marketing Manager
+**Date:** March 15, 2024
+**Duration:** 45 minutes
+**Facilitator:** [Researcher]
+**App Version:** v1.2 prototype
+
+---
+
+## Session Overview
+Testing core workflows: lunch planning, expense tracking, and team coordination features.
+
+---
+
+## Transcript
+
+**[00:00] Facilitator:** Thanks for joining us today, Sarah. We're testing a new team lunch planning and expense tracker app. Can you start by telling me about how your team currently handles lunch planning?
+
+**[00:15] Sarah:** Sure! Right now it's pretty chaotic. Someone usually sends a Slack message like "lunch at 12?" and then we spend 10 minutes figuring out where to go. And don't get me started on splitting bills - we either awkwardly ask for separate checks or someone pays and we forget to reimburse them.
+
+**[00:32] Facilitator:** Perfect. Let's see if this app can help. I'm going to share the prototype with you. Take a look at the home screen and tell me what you see.
+
+**[00:45] Sarah:** Okay, I see... there's a big "Plan New Lunch" button at the top, which is obvious. Below that it looks like there are upcoming lunches - I can see "Team Lunch - Thai Garden" for tomorrow. There's also a section for "Recent Expenses" and my spending this month is $127.50. The navigation at the bottom has Home, Plan, Expenses, and Team.
+
+**[01:05] Facilitator:** What would you do if you wanted to organize lunch for today?
+
+**[01:10] Sarah:** I'd tap the "Plan New Lunch" button... *taps*
+
+Oh wow, this is nice! It's asking me to select the date - today is already selected. Now it wants me to choose team members... I can see profile pictures and names. Let me select... *selects 4 team members*
+
+Now it's asking for restaurant preferences. I can see different cuisines - Mexican, Italian, Asian, American. There's also a budget range slider. This is smart because Tom is always worried about spending too much.
+
+**[01:45] Sarah:** I'll set the budget to $15-25 per person and select Italian since we had Asian yesterday.
+
+**[01:52] Facilitator:** What happens next?
+
+**[01:54] Sarah:** It's showing me restaurant options! Three Italian places nearby with ratings, distance, and average price per person. "Mario's Bistro" looks good - 4.5 stars, 0.3 miles away, $18 average. Let me tap on it...
+
+Perfect! I can see the menu, photos, and it even shows estimated wait times. There's a "Send Invitation" button. *taps*
+
+**[02:15] Sarah:** Now it's asking me to add a message. I'll type "Let's try the new Italian place! They have great reviews." And I can set the meet-up time... 12:30 PM works.
+
+**[02:28] Facilitator:** How do you feel about this planning process so far?
+
+**[02:32] Sarah:** It's so much easier than our usual back-and-forth! I love that I can see everyone's availability - it shows Tom is in a meeting until 12:15, so I know 12:30 works better. The budget feature is genius because it prevents those awkward moments when someone suggests a place that's too expensive.
+
+**[02:50] Facilitator:** The invitation has been sent. What do you expect to happen now?
+
+**[02:54] Sarah:** I'd expect my team members to get notifications and be able to respond. Can I see the status somewhere?
+
+**[02:59] Facilitator:** Check the home screen.
+
+**[03:02] Sarah:** Oh! The "Team Lunch - Mario's Bistro" now shows "Today 12:30 PM" and I can see response status. It shows 2 confirmed, 1 pending, 1 declined. Mike declined and added a note "Client call moved to lunch time." That's helpful context.
+
+**[03:18] Facilitator:** Let's fast forward. Imagine you've had lunch and now need to handle the bill. How would you do that?
+
+**[03:25] Sarah:** I'd probably go to the Expenses tab... *taps*
+
+I see my expense history here. There's an "Add Expense" button. *taps*
+
+**[03:35] Sarah:** This is smart! It automatically detected I was at Mario's Bistro and pre-filled the location and date. I can either scan the receipt or enter manually. Let me try scanning... *mimes taking photo of receipt*
+
+**[03:48] Sarah:** Wow, it read everything! Total $67.50, tax $5.40, tip $12.00. It even identified individual items. Now it's asking how to split it... I can choose "Split Equally" or "Split by Items." Since we shared appetizers, I'll do split equally among the 3 people who came.
+
+**[04:08] Facilitator:** What happens after you confirm the split?
+
+**[04:12] Sarah:** It shows each person owes $22.50. I can see options to "Request Payment" through Venmo, PayPal, or just send a reminder. This is amazing because usually I just pay and forget to ask people back!
+
+**[04:25] Facilitator:** How does this compare to your current process?
+
+**[04:29] Sarah:** Night and day! Usually I either pay for everyone and lose money, or we spend 5 minutes with the server splitting the check in weird ways. This makes it transparent and fair. I can see Tom already marked his payment as sent.
+
+**[04:45] Facilitator:** Let's say you want to check your team's lunch spending for budget planning. How would you do that?
+
+**[04:52] Sarah:** Maybe in the Team tab? *taps*
+
+Oh interesting! I can see team stats - we've had 8 lunches this month, average cost $19 per person. There's a breakdown by cuisine type and restaurants. This would be super helpful for our monthly team budget planning.
+
+**[05:12] Sarah:** I can also see individual spending - looks like Mike always goes for the expensive options! *laughs* This transparency is good though, it might encourage people to be more mindful.
+
+**[05:25] Facilitator:** What features are you most excited about?
+
+**[05:29] Sarah:** The automatic bill splitting is huge. And I love that it considers everyone's schedule and budget preferences upfront. The receipt scanning is like magic - no more manual math. The team spending insights could actually help us make better budget decisions.
+
+**[05:45] Facilitator:** Any concerns or things you'd change?
+
+**[05:48] Sarah:** Hmm... I wonder about privacy. Some people might not want their spending visible to the whole team. Maybe make that optional? Also, what if someone has dietary restrictions? I didn't see a way to filter restaurants by that.
+
+**[06:05] Sarah:** Oh, and what happens if someone consistently doesn't pay people back? Is there any way to track that pattern?
+
+**[06:15] Facilitator:** Great feedback. Finally, would you use this app with your team?
+
+**[06:20] Sarah:** Absolutely! This would solve so many of our daily frustrations. I'd probably use the planning feature 2-3 times per week and expense tracking for every team lunch. If the whole team adopted it, it would save us probably 30 minutes a week just in coordination time.
+
+**[06:35] Sarah:** The only challenge would be getting everyone to download and use it consistently. But honestly, once they see how much easier it makes everything, I think they'd be sold.
+
+---

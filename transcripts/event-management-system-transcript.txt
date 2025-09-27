@@ -1,0 +1,230 @@
+MEETING TRANSCRIPT: Community Event Management System Requirements
+Date: September 26, 2024
+Duration: 1 hour 15 minutes
+Participants: Maria Santos (Community Manager), Brian Kim (Event Coordinator), Lisa Thompson (Marketing), Dave Chen (Developer)
+
+--- MEETING START ---
+
+Maria: Thanks for joining everyone. We need to build a simple system to manage our community events. Right now everything is in spreadsheets and it's getting chaotic as we grow.
+
+Brian: Last month we had three events running simultaneously and I lost track of who was attending what. We oversold two events and undersold another.
+
+Lisa: From a marketing perspective, I can't track which promotional channels are working. Are people finding our events through social media, email, or word of mouth?
+
+Dave: And technically, we're using Google Forms for registration, Eventbrite for some events, manual email lists for others. It's a mess to manage.
+
+Maria: So what would make our lives easier? Let's start with the basics.
+
+Brian: A central place to create and manage all our events. Basic info like title, date, time, location, capacity, description.
+
+Lisa: Registration management. People should be able to sign up online, get confirmation emails, receive reminders.
+
+Dave: Attendee tracking. Who's registered, who actually showed up, waitlist management when events are full.
+
+Maria: What about different types of events? We do workshops, networking mixers, speaker sessions, volunteer activities.
+
+Brian: Good point. Different event types might need different registration information. Workshop might need skill level, networking event might need job title.
+
+Lisa: Some events are free, others have fees. Need to handle both registration types.
+
+Dave: And some events are members-only, others are open to public. Need access controls.
+
+Maria: Let's talk about the user experience. What should it look like for attendees?
+
+Lisa: Simple event listing page showing upcoming events with key details - date, time, location, brief description.
+
+Brian: Event detail pages with full descriptions, speaker bios if applicable, agenda or schedule.
+
+Dave: Easy registration process. Click register, fill out basic info, get confirmation. No complicated account creation required.
+
+Maria: What information do we need from attendees?
+
+Brian: Name, email, phone number for reminders. Maybe dietary restrictions for catered events.
+
+Lisa: How they heard about the event for marketing tracking. Company or organization they're with for networking events.
+
+Dave: Emergency contact info for outdoor events or activities with higher risk.
+
+Maria: Any special accommodations they need for accessibility.
+
+Brian: For workshops, maybe their experience level or what they hope to learn.
+
+Maria: What about the organizer side? What features do we need?
+
+Brian: Event creation wizard. Template-based setup for different event types to make it faster.
+
+Lisa: Attendee management dashboard. See who's registered, send messages to specific groups, manage waitlists.
+
+Dave: Simple check-in system. Maybe QR codes on confirmation emails that we can scan at the door.
+
+Maria: Reporting and analytics. How many people registered, showed up, no-shows by event type.
+
+Brian: Calendar integration so events automatically appear in our work calendars.
+
+Lisa: Email communication tools. Send event reminders, updates, follow-up surveys.
+
+Maria: What about promotion and marketing features?
+
+Lisa: Social media integration. Auto-post new events to Facebook, Twitter, LinkedIn.
+
+Brian: Email newsletter integration. Automatically include upcoming events in our monthly newsletter.
+
+Dave: Simple landing pages for each event that we can link to from various promotional channels.
+
+Lisa: Registration tracking by source. Which marketing channels drive the most registrations.
+
+Maria: Location and venue management?
+
+Brian: Venue database with capacity limits, address, parking info, accessibility details.
+
+Dave: Integration with maps for directions. Maybe even parking availability if we can get that data.
+
+Maria: Room setup requirements for different event types. Classroom style, networking setup, presentation format.
+
+Brian: Equipment needs tracking. Do we need projectors, microphones, catering, tables?
+
+Maria: What about recurring events?
+
+Brian: Monthly book club, weekly yoga classes, quarterly board meetings. Should be easy to create recurring series.
+
+Lisa: Automatic registration opening. Like registration opens 30 days before each monthly event.
+
+Dave: Series management. People can register for single events or the whole series.
+
+Maria: What could go wrong? What problems should we anticipate?
+
+Brian: Overbooking events due to manual errors or system glitches. We need clear capacity management.
+
+Lisa: Spam registrations or people registering for free events they don't plan to attend.
+
+Dave: System downtime during high-registration periods, like when we announce popular speakers.
+
+Maria: Data privacy concerns. We're collecting personal information and need to handle it properly.
+
+Brian: No-show management. People register but don't attend, making it seem full when seats are available.
+
+Maria: What integrations do we need?
+
+Dave: Email system integration for automated confirmations and reminders.
+
+Lisa: Google Calendar integration for easy event scheduling and calendar sharing.
+
+Brian: Payment processing for paid events. Nothing too complex, just basic credit card handling.
+
+Maria: CRM integration to track community member engagement across events.
+
+Dave: Survey tools for post-event feedback collection.
+
+Maria: What about mobile access?
+
+Lisa: Mobile-responsive registration. Many people will sign up from their phones.
+
+Brian: Mobile check-in capability. Tablet or phone app for scanning QR codes at events.
+
+Dave: Mobile-friendly event listings and details. People browse events on mobile frequently.
+
+Maria: Success metrics?
+
+Brian: Registration completion rate up, no-show rate down, faster event setup process.
+
+Lisa: Increased event attendance through better promotion and easier registration.
+
+Dave: Reduced manual work - fewer spreadsheets, fewer email management tasks.
+
+Maria: Better attendee satisfaction through smoother registration and communication.
+
+Brian: More events per month as the system makes management easier.
+
+Maria: What features can wait for later phases?
+
+Dave: Advanced analytics, complex reporting dashboards. Basic metrics are fine initially.
+
+Lisa: Social media auto-posting, advanced marketing automation. Manual posting is okay for now.
+
+Brian: Complex event series management. Simple recurring events are sufficient.
+
+Maria: Integration with accounting systems for paid event revenue tracking.
+
+Dave: Mobile apps. Mobile-responsive web is enough for version 1.
+
+Maria: What's a realistic timeline?
+
+Dave: This is pretty straightforward. Basic event management, registration, attendee tracking - maybe 2-3 months development.
+
+Brian: We have the summer event season coming up in 4 months. Would be great to have this ready by then.
+
+Lisa: Need time for testing and user training before we go live with real events.
+
+Maria: Phased approach?
+
+Dave: Phase 1: Event creation, basic registration, attendee management. 6-8 weeks.
+
+Brian: Phase 2: Check-in system, email communications, basic reporting. Another 4 weeks.
+
+Lisa: Phase 3: Marketing integrations, advanced features, payment processing. Final 4-6 weeks.
+
+Maria: We could start using Phase 1 for simple events while building the rest.
+
+Brian: What about data migration from our current systems?
+
+Dave: We have maybe 500 past attendees in various spreadsheets. Should be straightforward to import.
+
+Lisa: Historical event data for analytics. Would be nice but not critical for launch.
+
+Maria: Future event registrations in progress. Need to be careful not to disrupt anything already scheduled.
+
+Maria: Budget considerations?
+
+Dave: Mainly development time and hosting costs. Pretty minimal for a system this size.
+
+Brian: Potential costs for email service integration, payment processing fees.
+
+Lisa: Maybe some design work to make it look professional and match our branding.
+
+Maria: Any other features to consider?
+
+Brian: Volunteer coordination for events that need help. Sign up volunteers for different roles.
+
+Lisa: Post-event photo sharing. Simple gallery where attendees can share pictures.
+
+Dave: Basic event feedback collection. Star ratings and comments after events.
+
+Maria: Waiting list notifications. Auto-notify people if spots open up due to cancellations.
+
+Brian: Event categories or tags for better organization and filtering.
+
+Maria: What about accessibility requirements?
+
+Lisa: Screen reader compatibility, keyboard navigation, high contrast options.
+
+Brian: Large text options, audio descriptions for visual content.
+
+Dave: Simple, clear language throughout. No jargon or complex instructions.
+
+Maria: Multiple language support eventually, but English-only for v1.
+
+Brian: Let me make sure I understand the core workflow:
+
+1. Create event with basic details and capacity
+2. Open registration with custom form fields
+3. Attendees register online and get confirmations
+4. Send reminders and updates as needed
+5. Check people in at the event
+6. Collect feedback and track attendance
+7. Generate reports on event success
+
+Does that cover it?
+
+Maria: That's perfect. Simple but comprehensive.
+
+Lisa: The key is making each step as easy as possible. Both for us organizing and for people attending.
+
+Dave: Agreed. Better to have fewer features that work really well than lots of features that are confusing.
+
+Maria: Alright, next steps. Dave, can you create a technical specification document? Brian, can you document our current event management process and pain points? Lisa, can you define the marketing and communication requirements?
+
+Let's reconvene next week to review the detailed requirements and start development planning.
+
+Thanks everyone!
+
+--- MEETING END ---
