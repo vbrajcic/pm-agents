@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer - PM Agents</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --code-bg: #1e293b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            color: #c00;
+        }
+
+        /* Markdown Styling */
+        #content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        #content h2 {
+            font-size: 1.875rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        #content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        #content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        #content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        #content ul, #content ol {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        #content li {
+            margin-bottom: 0.5rem;
+        }
+
+        #content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+
+        #content th {
+            background: var(--surface);
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border);
+        }
+
+        #content td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        #content code {
+            background: var(--surface);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.875em;
+        }
+
+        #content pre {
+            background: var(--code-bg);
+            color: #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        #content pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        #content blockquote {
+            border-left: 4px solid var(--primary);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        #content hr {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2rem 0;
+        }
+
+        #content a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        #content a:hover {
+            text-decoration: underline;
+        }
+
+        #content strong {
+            font-weight: 600;
+        }
+
+        #content em {
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            #content h1 {
+                font-size: 2rem;
+            }
+
+            #content h2 {
+                font-size: 1.5rem;
+            }
+
+            #content table {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <div class="container">
+        <div id="loading" class="loading">Loading document...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        // Get the document path from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const docPath = urlParams.get('doc');
+
+        if (!docPath) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error').textContent = 'No document specified';
+        } else {
+            // Fetch and render the markdown
+            fetch(docPath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Document not found');
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('content').innerHTML = marked.parse(markdown);
+                })
+                .catch(error => {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').textContent = `Error loading document: ${error.message}`;
+                });
+        }
+    </script>
+</body>
+</html>

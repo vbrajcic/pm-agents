@@ -14,14 +14,11 @@
         :root {
             --primary: #2563eb;
             --primary-dark: #1e40af;
-            --secondary: #64748b;
             --background: #ffffff;
             --surface: #f8fafc;
             --border: #e2e8f0;
             --text: #0f172a;
-            --text-light: #475569;
-            --success: #10b981;
-            --shadow: rgba(0, 0, 0, 0.05);
+            --text-light: #64748b;
         }
 
         body {
@@ -29,79 +26,36 @@
             line-height: 1.6;
             color: var(--text);
             background: var(--background);
+            padding: 3rem 2rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            padding: 2rem 0;
-            margin-bottom: 3rem;
         }
 
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--text);
             margin-bottom: 0.5rem;
         }
 
         .subtitle {
             font-size: 1.125rem;
             color: var(--text-light);
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
             margin-bottom: 3rem;
         }
 
-        .stat-card {
-            background: var(--surface);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .section {
-            margin-bottom: 4rem;
-        }
-
         h2 {
-            font-size: 1.875rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-            border-bottom: 2px solid var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 3rem 0 1.5rem 0;
             padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
             gap: 1.5rem;
             margin-bottom: 2rem;
         }
@@ -115,80 +69,43 @@
         }
 
         .project-card:hover {
-            box-shadow: 0 4px 12px var(--shadow);
-            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .project-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .project-title {
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 0.25rem;
         }
 
         .complexity-badge {
-            display: inline-block;
             padding: 0.25rem 0.75rem;
             border-radius: 4px;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.025em;
         }
 
-        .badge-complex {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .badge-medium {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .badge-simple {
-            background: #d1fae5;
-            color: #065f46;
-        }
+        .badge-complex { background: #fef3c7; color: #92400e; }
+        .badge-medium { background: #dbeafe; color: #1e40af; }
+        .badge-simple { background: #d1fae5; color: #065f46; }
 
         .project-scope {
             color: var(--text-light);
-            font-size: 0.875rem;
             margin-bottom: 1rem;
-        }
-
-        .project-meta {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-            font-size: 0.875rem;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .meta-item strong {
-            color: var(--text);
         }
 
         .project-links {
             display: flex;
             gap: 0.75rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
         }
 
         .btn {
@@ -222,387 +139,160 @@
 
         .agents-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1rem;
+            margin-bottom: 3rem;
         }
 
         .agent-card {
             background: white;
             border: 1px solid var(--border);
             border-radius: 6px;
-            padding: 1.25rem;
-            transition: all 0.2s ease;
-        }
-
-        .agent-card:hover {
-            border-color: var(--primary);
+            padding: 1rem;
         }
 
         .agent-name {
-            font-size: 1rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
         }
 
         .agent-description {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        .workflow {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .workflow-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text);
-        }
-
-        .workflow-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .workflow-step {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .step-number {
-            background: var(--primary);
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.875rem;
-            flex-shrink: 0;
-        }
-
-        .step-content {
-            flex: 1;
-        }
-
-        .step-agent {
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .step-description {
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-
-        footer {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 2rem 0;
-            margin-top: 4rem;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            body {
+                padding: 2rem 1rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
+            h1 {
+                font-size: 2rem;
             }
 
             .agents-grid {
                 grid-template-columns: 1fr;
             }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>PM Agents</h1>
-            <p class="subtitle">Specialized AI Agent Suite for Product Management Workflows</p>
+    <div class="container">
+        <h1>PM Agents</h1>
+        <p class="subtitle">Specialized AI Agent Suite for Product Management Workflows</p>
+
+        <h2>Completed Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Inventory Management System</div>
+                    <span class="complexity-badge badge-complex">Complex</span>
+                </div>
+                <p class="project-scope">Equipment tracking, software subscriptions, QR scanning, approval workflows. 10 features, 162 story points, 18-22 weeks.</p>
+                <div class="project-links">
+                    <a href="viewer.html?doc=docs/prds/project/comprehensive-inventory-management-system-prd.md" class="btn btn-primary">Project PRD</a>
+                    <a href="viewer.html?doc=docs/feature-extractions/inventory-management-system-feature-extraction.md" class="btn btn-secondary">Features</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Employee Onboarding Portal</div>
+                    <span class="complexity-badge badge-medium">Medium</span>
+                </div>
+                <p class="project-scope">Digital onboarding workflows, task automation, system integration. 8 features, 233 story points, 27-34 weeks.</p>
+                <div class="project-links">
+                    <a href="viewer.html?doc=docs/prds/project/employee-onboarding-portal-comprehensive-prd-v1.0.md" class="btn btn-primary">Project PRD</a>
+                    <a href="viewer.html?doc=docs/feature-extractions/employee-onboarding-portal-feature-extraction.md" class="btn btn-secondary">Features</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Personal Expense Tracking App</div>
+                    <span class="complexity-badge badge-simple">Simple</span>
+                </div>
+                <p class="project-scope">Personal finance tracking, receipt scanning, budget management, analytics. 16 features.</p>
+                <div class="project-links">
+                    <a href="viewer.html?doc=docs/prds/project/personal-expense-tracking-app-comprehensive-prd.md" class="btn btn-primary">Project PRD</a>
+                    <a href="viewer.html?doc=docs/feature-extractions/personal-expense-tracking-feature-extraction.md" class="btn btn-secondary">Features</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title">Team Lunch Planner</div>
+                    <span class="complexity-badge badge-simple">Simple</span>
+                </div>
+                <p class="project-scope">Team lunch coordination, expense splitting, polling, restaurant integration. 26 features.</p>
+                <div class="project-links">
+                    <a href="viewer.html?doc=docs/prds/project/team-lunch-planner-expense-tracker-comprehensive-prd.md" class="btn btn-primary">Project PRD</a>
+                    <a href="viewer.html?doc=docs/feature-extractions/team-lunch-planner-feature-extraction.md" class="btn btn-secondary">Features</a>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main class="container">
-        <!-- Stats Section -->
-        <div class="stats">
-            <div class="stat-card">
-                <span class="stat-number">14</span>
-                <span class="stat-label">AI Agents</span>
+        <h2>All Agents (14)</h2>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div class="agent-name">project-prd-writer</div>
+                <div class="agent-description">Comprehensive project PRD creation</div>
             </div>
-            <div class="stat-card">
-                <span class="stat-number">4</span>
-                <span class="stat-label">Completed Projects</span>
+            <div class="agent-card">
+                <div class="agent-name">prd-feature-extractor</div>
+                <div class="agent-description">Feature extraction with breakdown</div>
             </div>
-            <div class="stat-card">
-                <span class="stat-number">60</span>
-                <span class="stat-label">Feature PRDs</span>
+            <div class="agent-card">
+                <div class="agent-name">concise-feature-prd-writer</div>
+                <div class="agent-description">Individual feature PRD generation</div>
             </div>
-            <div class="stat-card">
-                <span class="stat-number">7</span>
-                <span class="stat-label">Test Transcripts</span>
+            <div class="agent-card">
+                <div class="agent-name">feature-chat-agent</div>
+                <div class="agent-description">Interactive feature refinement</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">questions-assessment-agent</div>
+                <div class="agent-description">PRD completeness analysis</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">feature-brainstorm</div>
+                <div class="agent-description">Feature ideation & evaluation</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">idea-collector</div>
+                <div class="agent-description">Idea collection & documentation</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">research-expert</div>
+                <div class="agent-description">UX research & user studies</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">jira-ticket-writer</div>
+                <div class="agent-description">Outcome-focused JIRA tickets</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">ticket-writer</div>
+                <div class="agent-description">Development ticket creation</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">design-to-jira-agent</div>
+                <div class="agent-description">Design handoff management</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">bug-reporter</div>
+                <div class="agent-description">Bug collection & documentation</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">communication-optimizer</div>
+                <div class="agent-description">Stakeholder communication</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-name">project-prd-writer-enhanced-v2</div>
+                <div class="agent-description">Enhanced PRD writer v2</div>
             </div>
         </div>
-
-        <!-- Workflow Section -->
-        <section class="section">
-            <h2>Agent Workflow</h2>
-            <div class="workflow">
-                <div class="workflow-title">Complete End-to-End Process</div>
-                <div class="workflow-steps">
-                    <div class="workflow-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <div class="step-agent">project-prd-writer</div>
-                            <div class="step-description">Creates comprehensive project PRD from transcript</div>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <div class="step-agent">questions-assessment-agent</div>
-                            <div class="step-description">Identifies gaps and generates clarifying questions</div>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <div class="step-agent">prd-feature-extractor</div>
-                            <div class="step-description">Extracts features with development breakdown</div>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <div class="step-agent">feature-chat-agent</div>
-                            <div class="step-description">Refines complex features through targeted conversation</div>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <div class="step-agent">concise-feature-prd-writer</div>
-                            <div class="step-description">Generates individual feature PRDs</div>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">6</div>
-                        <div class="step-content">
-                            <div class="step-agent">jira-ticket-writer</div>
-                            <div class="step-description">Creates outcome-focused development tickets</div>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">7</div>
-                        <div class="step-content">
-                            <div class="step-agent">bug-reporter</div>
-                            <div class="step-description">Tracks and documents bugs during development</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="section">
-            <h2>Completed Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">Inventory Management System</div>
-                        </div>
-                        <span class="complexity-badge badge-complex">Complex</span>
-                    </div>
-                    <p class="project-scope">Equipment tracking, software subscriptions, QR scanning, approval workflows</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span><strong>10</strong> Features</span>
-                        </div>
-                        <div class="meta-item">
-                            <span><strong>162</strong> Story Points</span>
-                        </div>
-                        <div class="meta-item">
-                            <span><strong>18-22</strong> Weeks</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="docs/prds/project/comprehensive-inventory-management-system-prd.md" class="btn btn-primary">Project PRD</a>
-                        <a href="docs/feature-extractions/inventory-management-system-feature-extraction.md" class="btn btn-secondary">Features</a>
-                        <a href="docs/prds/features/inventory-management/" class="btn btn-secondary">Feature PRDs</a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">Employee Onboarding Portal</div>
-                        </div>
-                        <span class="complexity-badge badge-medium">Medium</span>
-                    </div>
-                    <p class="project-scope">Digital onboarding workflows, task automation, system integration</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span><strong>8</strong> Features</span>
-                        </div>
-                        <div class="meta-item">
-                            <span><strong>233</strong> Story Points</span>
-                        </div>
-                        <div class="meta-item">
-                            <span><strong>27-34</strong> Weeks</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="docs/prds/project/employee-onboarding-portal-comprehensive-prd-v1.0.md" class="btn btn-primary">Project PRD</a>
-                        <a href="docs/feature-extractions/employee-onboarding-portal-feature-extraction.md" class="btn btn-secondary">Features</a>
-                        <a href="docs/prds/features/employee-onboarding/" class="btn btn-secondary">Feature PRDs</a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">Personal Expense Tracking App</div>
-                        </div>
-                        <span class="complexity-badge badge-simple">Simple</span>
-                    </div>
-                    <p class="project-scope">Personal finance tracking, receipt scanning, budget management, analytics</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span><strong>16</strong> Features</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="docs/prds/project/personal-expense-tracking-app-comprehensive-prd.md" class="btn btn-primary">Project PRD</a>
-                        <a href="docs/feature-extractions/personal-expense-tracking-feature-extraction.md" class="btn btn-secondary">Features</a>
-                        <a href="docs/prds/features/personal-expense/" class="btn btn-secondary">Feature PRDs</a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div>
-                            <div class="project-title">Team Lunch Planner</div>
-                        </div>
-                        <span class="complexity-badge badge-simple">Simple</span>
-                    </div>
-                    <p class="project-scope">Team lunch coordination, expense splitting, polling, restaurant integration</p>
-                    <div class="project-meta">
-                        <div class="meta-item">
-                            <span><strong>26</strong> Features</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="docs/prds/project/team-lunch-planner-expense-tracker-comprehensive-prd.md" class="btn btn-primary">Project PRD</a>
-                        <a href="docs/feature-extractions/team-lunch-planner-feature-extraction.md" class="btn btn-secondary">Features</a>
-                        <a href="docs/prds/features/team-lunch-planner/" class="btn btn-secondary">Feature PRDs</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Agents Section -->
-        <section class="section">
-            <h2>All Agents (14)</h2>
-            <div class="agents-grid">
-                <div class="agent-card">
-                    <div class="agent-name">project-prd-writer</div>
-                    <div class="agent-description">Comprehensive project PRD creation from transcripts</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">project-prd-writer-enhanced-v2</div>
-                    <div class="agent-description">Enhanced PRD writer with advanced features</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">concise-feature-prd-writer</div>
-                    <div class="agent-description">Individual feature PRD generation</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">prd-feature-extractor</div>
-                    <div class="agent-description">Feature extraction from PRDs with development breakdown</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">feature-chat-agent</div>
-                    <div class="agent-description">Interactive feature refinement through conversation</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">questions-assessment-agent</div>
-                    <div class="agent-description">PRD completeness analysis and gap identification</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">feature-brainstorm</div>
-                    <div class="agent-description">Feature ideation and evaluation partner</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">idea-collector</div>
-                    <div class="agent-description">Idea collection and documentation system</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">research-expert</div>
-                    <div class="agent-description">UX research and user study design</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">jira-ticket-writer</div>
-                    <div class="agent-description">Outcome-focused JIRA ticket creation</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">ticket-writer</div>
-                    <div class="agent-description">Development ticket creation and management</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">design-to-jira-agent</div>
-                    <div class="agent-description">Design handoff and JIRA integration</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">bug-reporter</div>
-                    <div class="agent-description">Bug collection and documentation workflow</div>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-name">communication-optimizer</div>
-                    <div class="agent-description">Stakeholder communication optimization</div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>PM Agents - Product Management Tool Suite</p>
-            <p>View source on <a href="https://github.com/vanabrajcic/pm-agents" target="_blank">GitHub</a></p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
