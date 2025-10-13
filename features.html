@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature PRDs - PM Agents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e2e8f0;
+            --text: #0f172a;
+            --text-light: #64748b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .feature-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-id {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+
+    <div class="container">
+        <h1 id="project-title">Feature PRDs</h1>
+        <p class="subtitle" id="project-subtitle"></p>
+        <div id="feature-list" class="feature-list"></div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const project = urlParams.get('project');
+
+        const projectData = {
+            'inventory-management': {
+                title: 'Inventory Management System',
+                count: 10,
+                features: [
+                    { file: 'feature-prd-user-authentication.md', title: 'User Authentication & Role Management' },
+                    { file: 'feature-prd-equipment-registration.md', title: 'Equipment Registration & Management' },
+                    { file: 'feature-prd-software-subscription.md', title: 'Software Subscription Management' },
+                    { file: 'feature-prd-request-approval-workflow.md', title: 'Request & Approval Workflow' },
+                    { file: 'feature-prd-reporting-analytics.md', title: 'Reporting & Analytics Dashboard' },
+                    { file: 'feature-prd-qr-code-scanning.md', title: 'QR Code Scanning Integration' },
+                    { file: 'feature-prd-file-management.md', title: 'File Management & Invoice Storage' },
+                    { file: 'feature-prd-notification-system.md', title: 'Notification & Communication System' },
+                    { file: 'feature-prd-search-filtering.md', title: 'Advanced Search & Filtering System' },
+                    { file: 'feature-prd-audit-compliance.md', title: 'Audit Trail & Compliance System' }
+                ]
+            },
+            'employee-onboarding': {
+                title: 'Employee Onboarding Portal',
+                count: 8,
+                features: [
+                    { file: 'onboarding-feature-prd-employee-profile.md', title: 'Employee Profile Management' },
+                    { file: 'onboarding-feature-prd-task-workflow.md', title: 'Task Workflow Engine' },
+                    { file: 'onboarding-feature-prd-document-management.md', title: 'Document Management System' },
+                    { file: 'onboarding-feature-prd-system-integration.md', title: 'System Integration Hub' },
+                    { file: 'onboarding-feature-prd-manager-dashboard.md', title: 'Manager Dashboard & Oversight' },
+                    { file: 'onboarding-feature-prd-notification-system.md', title: 'Notification & Communication System' },
+                    { file: 'onboarding-feature-prd-analytics-reporting.md', title: 'Analytics & Reporting Dashboard' },
+                    { file: 'onboarding-feature-prd-mobile-optimization.md', title: 'Mobile Optimization & Responsive Design' }
+                ]
+            },
+            'personal-expense': {
+                title: 'Personal Expense Tracking App',
+                count: 16,
+                features: [
+                    { file: 'FT-001-bank-account-integration.md', title: 'FT-001: Bank Account Integration' },
+                    { file: 'FT-002-smart-transaction-categorization.md', title: 'FT-002: Smart Transaction Categorization' },
+                    { file: 'FT-003-manual-expense-entry.md', title: 'FT-003: Manual Expense Entry' },
+                    { file: 'FT-004-real-time-budget-tracking.md', title: 'FT-004: Real-time Budget Tracking' },
+                    { file: 'FT-005-proactive-budget-alerts.md', title: 'FT-005: Proactive Budget Alerts' },
+                    { file: 'FT-006-spending-pattern-analysis.md', title: 'FT-006: Spending Pattern Analysis' },
+                    { file: 'FT-007-financial-health-scoring.md', title: 'FT-007: Financial Health Scoring' },
+                    { file: 'FT-008-custom-reporting-export.md', title: 'FT-008: Custom Reporting & Export' },
+                    { file: 'FT-009-savings-goal-management.md', title: 'FT-009: Savings Goal Management' },
+                    { file: 'FT-010-goal-achievement-analytics.md', title: 'FT-010: Goal Achievement Analytics' },
+                    { file: 'FT-011-expense-splitting-friends.md', title: 'FT-011: Expense Splitting with Friends' },
+                    { file: 'FT-012-bill-reminder-system.md', title: 'FT-012: Bill Reminder System' },
+                    { file: 'FT-013-security-privacy-controls.md', title: 'FT-013: Security & Privacy Controls' },
+                    { file: 'FT-014-performance-optimization.md', title: 'FT-014: Performance Optimization' },
+                    { file: 'FT-015-subscription-monetization.md', title: 'FT-015: Subscription Monetization' },
+                    { file: 'FT-016-user-onboarding-support.md', title: 'FT-016: User Onboarding & Support' }
+                ]
+            },
+            'team-lunch-planner': {
+                title: 'Team Lunch Planner',
+                count: 18,
+                features: [
+                    { file: 'FT-001-user-authentication-system.md', title: 'FT-001: User Authentication System' },
+                    { file: 'FT-002-user-profile-preferences.md', title: 'FT-002: User Profile & Preferences' },
+                    { file: 'FT-003-lunch-event-creation.md', title: 'FT-003: Lunch Event Creation' },
+                    { file: 'FT-004-invitation-rsvp-system.md', title: 'FT-004: Invitation & RSVP System' },
+                    { file: 'FT-005-restaurant-recommendation-engine.md', title: 'FT-005: Restaurant Recommendation Engine' },
+                    { file: 'FT-006-calendar-integration-availability.md', title: 'FT-006: Calendar Integration & Availability' },
+                    { file: 'FT-007-restaurant-selection-confirmation.md', title: 'FT-007: Restaurant Selection & Confirmation' },
+                    { file: 'FT-008-smart-expense-detection.md', title: 'FT-008: Smart Expense Detection' },
+                    { file: 'FT-009-receipt-scanning-ocr.md', title: 'FT-009: Receipt Scanning & OCR' },
+                    { file: 'FT-010-intelligent-bill-splitting.md', title: 'FT-010: Intelligent Bill Splitting' },
+                    { file: 'FT-011-payment-request-tracking.md', title: 'FT-011: Payment Request & Tracking' },
+                    { file: 'FT-012-expense-history-search.md', title: 'FT-012: Expense History & Search' },
+                    { file: 'FT-013-team-spending-dashboard.md', title: 'FT-013: Team Spending Dashboard' },
+                    { file: 'FT-014-individual-spending-analytics.md', title: 'FT-014: Individual Spending Analytics' },
+                    { file: 'FT-015-spending-reports-export.md', title: 'FT-015: Spending Reports & Export' },
+                    { file: 'FT-016-real-time-notification-system.md', title: 'FT-016: Real-time Notification System' },
+                    { file: 'FT-017-mobile-app-optimization.md', title: 'FT-017: Mobile App Optimization' },
+                    { file: 'FT-018-security-compliance.md', title: 'FT-018: Security & Compliance' }
+                ]
+            }
+        };
+
+        if (project && projectData[project]) {
+            const data = projectData[project];
+            document.getElementById('project-title').textContent = data.title + ' - Feature PRDs';
+            document.getElementById('project-subtitle').textContent = `${data.count} feature breakdown documents`;
+
+            const featureList = document.getElementById('feature-list');
+            data.features.forEach(feature => {
+                const link = document.createElement('a');
+                link.href = `viewer.html?doc=docs/prds/features/${project}/${feature.file}`;
+                link.className = 'feature-item';
+                link.innerHTML = `
+                    <div class="feature-title">${feature.title}</div>
+                `;
+                featureList.appendChild(link);
+            });
+        } else {
+            document.getElementById('project-title').textContent = 'Project not found';
+            document.getElementById('project-subtitle').textContent = 'The requested project does not exist.';
+        }
+    </script>
+</body>
+</html>
