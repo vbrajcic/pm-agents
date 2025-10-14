@@ -501,15 +501,26 @@
         }
         @media (max-width: 768px) {
             body {
-                padding: 2rem 1rem;
+                padding: 1.5rem 1rem;
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 1.75rem;
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
             }
 
             .agents-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
             .value-prop {
@@ -527,24 +538,64 @@
                 text-align: center;
             }
 
+            /* Workflow Steps - More Touch Friendly */
             .workflow-step {
-                padding: 1rem;
+                padding: 1.25rem;
+                margin-bottom: 0.75rem;
             }
 
             .workflow-stepper {
                 grid-template-columns: 1fr;
+                gap: 1rem;
             }
 
             .workflow-stepper::before {
                 display: none;
             }
 
-            .workflow-step-title {
+            .workflow-step-header {
+                gap: 0.75rem;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .workflow-step-header::after {
+                content: "▼";
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
                 font-size: 0.875rem;
+                color: var(--primary);
+                transition: transform 0.3s ease;
+            }
+            .workflow-number {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.125rem;
+            }
+
+            .workflow-step-title {
+                font-size: 1rem;
             }
 
             .workflow-step-subtitle {
-                font-size: 0.6875rem;
+                font-size: 0.75rem;
+            }
+
+            /* Workflow Details Panel */
+            .workflow-details {
+                padding: 1.5rem;
+                margin-top: 1rem;
+            }
+
+            .workflow-details-title {
+                font-size: 1.125rem;
+            }
+
+            .workflow-how {
+                font-size: 0.9375rem;
+                line-height: 1.6;
             }
 
             .workflow-io {
@@ -558,10 +609,140 @@
 
             .workflow-specs {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
+            /* Mobile Accordion Styles */
+            .workflow-details-accordion {
+                margin-top: 1rem;
+                padding: 1.5rem;
+                background: white;
+                border: 1px solid var(--border);
+                border-radius: 0.5rem;
+                animation: accordionSlide 0.3s ease-out;
+            }
+            
+            @keyframes accordionSlide {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                    max-height: 0;
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                    max-height: 2000px;
+                }
+            }
+            
+            /* Hide desktop details panel on mobile */
+            .workflow-visual > .workflow-details {
+                display: none;
+            }
+            
+            /* Keep hint visible */
+            .workflow-hint {
+                display: block;
+            }
+
+            .spec-list {
+                font-size: 0.875rem;
+            }
+
+            .workflow-hint {
+                font-size: 0.875rem;
+                margin-top: 1.5rem;
+            }
+
+            /* Projects Grid */
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .project-header h3 {
+                font-size: 1.125rem;
+            }
+
+            .project-description {
+                font-size: 0.9375rem;
+            }
+
+            .project-metrics {
+                gap: 0.75rem;
+                padding: 1rem;
+            }
+
+            .metric-value {
+                font-size: 1.375rem;
+            }
+
+            .metric-label {
+                font-size: 0.75rem;
+            }
+
+            /* Agent Cards */
+            .agent-card {
+                padding: 1.25rem;
+            }
+
+            .agent-name {
+                font-size: 0.875rem;
+            }
+
+            .agent-description {
+                font-size: 0.875rem;
+                line-height: 1.5;
+            }
+
+            /* Section Titles */
+            .section-intro {
+                font-size: 1rem;
+            }
+
+            .category-title {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .workflow-step {
+                padding: 1rem;
+            }
+
+            .workflow-number {
+                width: 2rem;
+                height: 2rem;
+                font-size: 1rem;
+            }
+
+
+            .workflow-details-accordion {
+                padding: 1rem;
+            }
+            .workflow-step-title {
+                font-size: 0.9375rem;
+            }
+
+            .workflow-details {
+                padding: 1rem;
             }
 
             .project-card {
@@ -569,16 +750,11 @@
             }
 
             .project-metrics {
-                gap: 0.5rem;
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .metric {
                 padding: 0.75rem;
-            }
-
-            .metric-value {
-                font-size: 1.25rem;
-            }
-
-            .agents-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -735,16 +911,57 @@
                 </div>
                 
             </div>
-            <div class="workflow-hint">Click on any step above to see details</div>
+            <div class="workflow-hint">Tap any step to see details</div>
         </div>
 
         <script>
         function showDetails(step) {
-            // Hide all details
-            document.querySelectorAll('.workflow-details').forEach(d => d.classList.remove('active'));
-            // Show selected details
-            document.getElementById('details-' + step).classList.add('active');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // Mobile accordion behavior
+                const clickedStep = document.querySelector(`.workflow-step:nth-child(${step})`);
+                const existingAccordion = clickedStep.querySelector('.workflow-details-accordion');
+                
+                // Remove all other open accordions
+                document.querySelectorAll('.workflow-details-accordion').forEach(acc => {
+                    if (!clickedStep.contains(acc)) {
+                        acc.remove();
+                    }
+                });
+                
+                // Toggle current accordion
+                if (existingAccordion) {
+                    existingAccordion.remove();
+                } else {
+                    // Clone the details content
+                    const detailsSource = document.getElementById('details-' + step);
+                    const detailsClone = detailsSource.cloneNode(true);
+                    detailsClone.classList.add('workflow-details-accordion');
+                    detailsClone.classList.add('active');
+                    detailsClone.removeAttribute('id');
+                    
+                    // Insert after header
+                    clickedStep.appendChild(detailsClone);
+                }
+            } else {
+                // Desktop behavior (original)
+                document.querySelectorAll('.workflow-details').forEach(d => d.classList.remove('active'));
+                document.getElementById('details-' + step).classList.add('active');
+            }
         }
+        
+        // Handle window resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                // Clean up accordions if switching to desktop
+                if (window.innerWidth > 768) {
+                    document.querySelectorAll('.workflow-details-accordion').forEach(acc => acc.remove());
+                }
+            }, 250);
+        });
         </script>
         <h2>Completed Projects</h2>
         <p class="section-intro">Real examples of the complete workflow in action—from initial conversation to production-ready documentation.</p>
