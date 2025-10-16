@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Cache and sensitive data
+.context-cache/
+.context-config.json
+
+# Temporary files
+*.backup
+.DS_Store
+
+# Screenshots (can be large)
+screenshots/

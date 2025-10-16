@@ -1,0 +1,15 @@
+{
+  "name": "pm-agents",
+  "version": "1.0.0",
+  "description": "PM Agents - Complete Context Gathering System",
+  "scripts": {
+    "gather-context": "node scripts/gather-context.js",
+    "extract-context": "node scripts/extract-context.js",
+    "synthesize-context": "node scripts/synthesize-context.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.65.0",
+    "@octokit/rest": "^22.0.0",
+    "playwright": "^1.56.0"
+  }
+}

@@ -2,15 +2,36 @@
 
 This repository contains specialized agents for product management workflows and organized project documentation.
 
+## 🚀 Getting Started
+
+**New to PM Agents?** Start here:
+
+- **📖 [Complete User Guide](docs/HOW-TO-USE-PM-AGENTS.md)** - Step-by-step instructions for using the 3 core agents
+- **⚡ [Quick Reference](docs/QUICK-REFERENCE.md)** - One-page cheat sheet
+
+### The 3 Core Agents
+
+1. **Project PRD Writer** (`agents/project-prd-writer-enhanced-v2.md`) - Create comprehensive project PRDs from meeting transcripts
+2. **Feature PRD Writer** (`agents/concise-feature-prd-writer.md`) - Write detailed feature specifications
+3. **Feature Extractor** (`agents/prd-feature-extractor.md`) - Break down project PRDs into developable features
+
+**Quick Start:**
+1. Open [claude.ai](https://claude.ai)
+2. Copy an agent file from `agents/` folder
+3. Paste into Claude and provide your input
+4. Get your PRD!
+
+---
+
 ## Structure
 
 ```
 pm-agents/
 ├── agents/                     # AI Agent Specifications (14 agents)
 │   ├── project-prd-writer.md              # Comprehensive project PRD creation
-│   ├── project-prd-writer-enhanced-v2.md  # Enhanced PRD writer v2
-│   ├── concise-feature-prd-writer.md      # Individual feature PRDs
-│   ├── prd-feature-extractor.md           # Feature extraction from PRDs
+│   ├── project-prd-writer-enhanced-v2.md  # Enhanced PRD writer v2 ⭐
+│   ├── concise-feature-prd-writer.md      # Individual feature PRDs ⭐
+│   ├── prd-feature-extractor.md           # Feature extraction from PRDs ⭐
 │   ├── feature-chat-agent.md              # Interactive feature refinement
 │   ├── questions-assessment-agent.md      # PRD completeness analysis
 │   ├── feature-brainstorm.md              # Feature ideation & evaluation
@@ -22,6 +43,8 @@ pm-agents/
 │   ├── bug-reporter.md                    # Bug collection & documentation
 │   └── communication-optimizer.md         # Stakeholder communication
 ├── docs/                       # Generated Documentation
+│   ├── HOW-TO-USE-PM-AGENTS.md    # 📖 Complete user guide
+│   ├── QUICK-REFERENCE.md         # ⚡ Quick reference cheat sheet
 │   ├── prds/                      # Product Requirements Documents
 │   │   ├── project/                   # Complete project PRDs (4 projects)
 │   │   └── features/                  # Individual feature PRDs by project (60 total)
@@ -41,6 +64,10 @@ pm-agents/
 │   └── event-management-system-transcript.txt          # Simple project
 └── README.md                   # This file
 ```
+
+⭐ = Most commonly used agents
+
+---
 
 ## Completed Projects
 
@@ -74,6 +101,8 @@ pm-agents/
 - **Feature PRDs**: 18 documents in `docs/prds/features/team-lunch-planner/` and 8 in `docs/prds/features/team-lunch/`
 - **Scope**: Team lunch coordination, expense splitting, polling, restaurant integration
 
+---
+
 ## Agent Workflow Demonstrated
 
 **Complete End-to-End Process**:
@@ -94,6 +123,8 @@ pm-agents/
 
 **Scalability Proven**: Agents handle different complexity levels (simple to very complex) while maintaining methodology consistency across 4 completed projects and 60 feature PRDs.
 
+---
+
 ## Test Transcripts Available
 
 ### Complex Projects (Ready for Testing):
@@ -102,6 +133,8 @@ pm-agents/
 
 ### Simple Projects (Ready for Testing):
 - **Event Management System** (`event-management-system-transcript.txt`) - Basic community event registration and management
+
+---
 
 ## Features Documented
 
@@ -145,5 +178,16 @@ pm-agents/
 - Group management
 - And 20 more features...
 
+---
+
 ## Usage
+
+**For detailed instructions**, see:
+- **[Complete User Guide](docs/HOW-TO-USE-PM-AGENTS.md)** - Full documentation with examples
+- **[Quick Reference](docs/QUICK-REFERENCE.md)** - One-page cheat sheet
+
 Each agent has specific capabilities and templates. See individual agent files in `/agents/` for detailed specifications and usage instructions. Test with provided transcripts to explore different project complexity levels.
+
+---
+
+*For questions or issues, create an issue in this repository.*
